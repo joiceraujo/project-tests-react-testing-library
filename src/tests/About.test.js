@@ -18,9 +18,9 @@ describe('Teste se a página contém as informações sobre a Pokédex', () => {
   });
 
   test('Teste se a página contém dois parágrafos com texto sobre a Pokédex', () => {
-    const textParagraf = screen.getAllByText(/Pokémons/i);
-      expect(textParagraf).toBeDefined();
-      expect (textParagraf).toHaveLength(2);
+    const paragraf = screen.getAllByText(/Pokémons/i);
+    expect(paragraf).toBeDefined();
+    expect (paragraf).toHaveLength(2);
   });
 
   test('Teste se a página contém a seguinte imagem de uma Pokédex', () => {
