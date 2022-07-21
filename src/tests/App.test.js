@@ -1,6 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
+import userEvent from '@testing-library/user-event';
+
 import App from '../App';
 
 describe('Teste o componente App', () => {
@@ -16,14 +18,9 @@ describe('Teste o componente App', () => {
 
     const favoriteLink = screen.getByText(/Favorite Pokémons/i);
     expect(favoriteLink).toBeInTheDocument();
+
+    userEvent.click(homeLink);
+    userEvent.click(aboutLink);
+    userEvent.click(favoriteLink);
   });
 });
-
-// test('Teste se a aplicação é redirecionada para a página inicial', async () => {
-//   renderWithRouter(<App />);
-//   const homeLink = screen.getByRole('Link', {
-//     name: /Home/i,
-//   });
-//   expect(homeLink).toBeInTheDocument();
-//   userEvent.click(homeLink);
-// });
