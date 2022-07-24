@@ -8,7 +8,7 @@ describe('Teste o componente NotFound', () => {
     render(<MemoryRouter><NotFound /></MemoryRouter>);
   });
 
-  test('Teste se a página contém um heading h2 com texto Page requested not found', () => {
+  test('Teste se a página contém heading h2 com texto Page requested not found', () => {
     const textNotFound = screen.getByRole('heading', {
       name: /Page requested not found/i,
       level: 2,
