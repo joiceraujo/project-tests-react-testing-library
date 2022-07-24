@@ -4,21 +4,20 @@ import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom';
 import App from '../App';
 
-
 describe('Teste o componente Pokedex', () => {
     beforeEach(() => {
-      render(<MemoryRouter><App /></MemoryRouter>);
-    });
-
-    test('Teste se a página contém um heading h2 com o texto Encountered pokémons', () => {
-        const textPokemons = screen.getByRole('heading', { 
-            name: /Encountered pokémons/i,
-            level: 2,
-        });
-        expect(textPokemons).toBeInTheDocument();
+    render(<MemoryRouter><App /></MemoryRouter>);
       });
 
-      test('Teste se é exibido o próximo pokémon da lista quando o botão Próximo pokémon é clicado', () => {
+    test('Teste se a página contém um heading h2 com texto Encountered pokémons', () => {
+        const textPokemons = screen.getByRole('heading', { 
+        name: /Encountered pokémons/i,
+        level: 2,
+      });
+        expect(textPokemons).toBeInTheDocument();
+    });
+
+    test('Teste se é exibido o próximo pokémon da lista quando o botão Próximo pokémon é clicado', () => {
         const next = 'Proximo pokémon';
         const nextPokemon = screen.getByTestId(/next-pokemon/i);
         expect(nextPokemon).toBeInTheDocument();
@@ -27,7 +26,7 @@ describe('Teste o componente Pokedex', () => {
 
     test('Teste se a Pokédex tem os botões de filtro', () => {
         const buttons = screen.getByRole('button', {
-            name: /electric/i 
+        name: /electric/i 
         });
         const pokemonId = screen.getAllByTestId(/pokemon-type-button/i);
         expect(buttons).toBeDefined();
@@ -35,12 +34,12 @@ describe('Teste o componente Pokedex', () => {
         expect(pokemonId).toBeDefined();
     });
 
-  test('Teste se a Pokédex contém um botão para resetar o filtro', () => {
-    const buttonReset = screen.getByRole('button', {
+    test('Teste se a Pokédex contém um botão para resetar o filtro', () => {
+        const buttonReset = screen.getByRole('button', {
         name: /All/i 
     });
-    expect(buttonReset).toBeInTheDocument();
-    userEvent.click(buttonReset);
+        expect(buttonReset).toBeInTheDocument();
+        userEvent.click(buttonReset);
     
 });
 });
