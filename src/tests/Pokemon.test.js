@@ -7,7 +7,7 @@ import App from '../App';
 describe('Teste o componente Pokemon', () => {
   beforeEach(() => {
     render(<MemoryRouter><App /></MemoryRouter>);
-  }); 
+  });
 
   test('Teste se é renderizado um card com as informações de determinado pokémon', () => {
     const namePokemon = screen.getByTestId('pokemon-name');
@@ -37,7 +37,7 @@ describe('Teste o componente Pokemon', () => {
 
   test('Teste se existe um ícone de estrela nos pokémons favoritados', () => {
     const pageDetails = screen.getByRole('link', { name: /more details/i });
-    userEvent.click(pageDetails);  
+    userEvent.click(pageDetails);
     const favorites = screen.getByLabelText(/pokémon favoritado/i);
     userEvent.click(favorites);
     const imgStarIcon = screen.getByAltText(/Pikachu is marked/i);
