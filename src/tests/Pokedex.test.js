@@ -24,9 +24,7 @@ describe('Teste o componente Pokedex', () => {
   });
 
   test('Teste se a Pokédex tem os botões de filtro', () => {
-    const buttons = screen.getByRole('button', {
-      name: /electric/i,
-    });
+    const buttons = screen.getByRole('button', { name: /electric/i });
     const pokemonId = screen.getAllByTestId(/pokemon-type-button/i);
     expect(buttons).toBeDefined();
     userEvent.click(buttons);
@@ -34,9 +32,7 @@ describe('Teste o componente Pokedex', () => {
   });
 
   test('Teste se a Pokédex contém um botão para resetar o filtro', () => {
-    const buttonReset = screen.getByRole('button', {
-      name: /All/i, 
-    });
+    const buttonReset = screen.getByRole('button', { name: /All/i });
     expect(buttonReset).toBeInTheDocument();
     userEvent.click(buttonReset);
   });
