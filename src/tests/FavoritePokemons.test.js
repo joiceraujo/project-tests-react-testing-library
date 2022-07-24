@@ -9,7 +9,7 @@ describe('Teste o componente Favorite Pokemons', () => {
     });
   
 test('Teste se é exibida na tela a mensagem No favorite pokemon found, caso a pessoa não tenha pokémons favoritos', () => {
-    const favoritePokemons = screen.getByText(/No favorite pokemon found/i);
-    expect(favoritePokemons).toBeInTheDocument();
+    const noFavorite = screen.getByText(/No favorite pokemon found/i);
+    expect(noFavorite).toBeInTheDocument();
 });
 });
