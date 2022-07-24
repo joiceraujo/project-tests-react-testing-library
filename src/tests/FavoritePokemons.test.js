@@ -1,1 +1,22 @@
-test('', () => {});
+import React from 'react';
+import { FavoritePokemons } from '../pages';
+import { MemoryRouter } from 'react-router-dom';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+
+describe('Teste o componente Favorite Pokemons', () => {
+    beforeEach(() => {
+      render(<MemoryRouter><FavoritePokemons /></MemoryRouter>);
+    });
+  
+
+test('Teste se é exibida na tela a mensagem No favorite pokemon found, caso a pessoa não tenha pokémons favoritos', () => {
+    const favoritePokemons = screen.getByText(/No favorite pokemon found/i);
+    expect(favoritePokemons).toBeInTheDocument();
+});
+
+// test('Teste se são exibidos todos os cards de pokémons favoritados', () => {
+//    const cardsPokemons = screen.getByText('Pikachu');
+//    expect(cardsPokemons).toBeInTheDocument();
+// });
+});
