@@ -1,6 +1,6 @@
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
-import { screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import FavoritePokemons from '../pages/FavoritePokemons';
 
 describe('Teste o componente Favorite Pokemons', () => {
